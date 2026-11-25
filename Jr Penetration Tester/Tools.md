@@ -9,7 +9,9 @@ and versions behind them. Used at the start of almost every engagement.
 Flags I use:
 - `-p-` scan all 65535 ports
 - `-sV` detect service versions
-- `-sC` run default scripts
+- `-sC` runs Nmap's default scripts, pulling extra details (banners, auth methods, etc.)
+- `-oN ("file.name")` saves the output to a file, good habit for reporting later
+
 
 ## Gobuster
 Brute-force tool for web paths. Takes a wordlist, requests each word as a URL

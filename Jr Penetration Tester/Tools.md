@@ -51,3 +51,14 @@ Flags I use:
 
 Note: the listener and the command that triggers the shell must run in two
 separate terminals. The listener blocks the terminal it's running in while it waits.
+
+
+## searchsploit
+Command-line tool to search Exploit-DB's offline database of public exploits
+and vulnerability disclosures. Faster than Googling when you already roughly
+know what you're looking for, and works without internet access since the
+database is stored locally.
+
+Usage:
+
+`searchsploit <keyword>`

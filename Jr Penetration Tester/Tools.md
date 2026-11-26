@@ -62,3 +62,43 @@ database is stored locally.
 Usage:
 
 `searchsploit <keyword>`
+
+## Metasploit (msfconsole)
+Framework for finding, configuring and running exploits, without writing the
+exploit code yourself. Has a console (`msfconsole`) with modules for specific
+vulnerabilities, plus payloads to choose what happens after exploitation.
+
+Commands I use:
+- `search <keyword>` find modules matching a service/vulnerability
+- `use <#>` or `use <module path>` select a module
+- `show options` see what needs to be configured
+- `show payloads` list payloads compatible with the selected exploit
+- `set <OPTION> <value>` configure a required option
+- `exploit` (or `run`) launch the configured module
+
+## find
+Searches the filesystem for files/directories matching criteria (name, type,
+permissions, etc). Useful for hunting down config files, credentials, or
+anything with a telling name.
+
+Usage:
+`find <path> -name <pattern>`
+
+Flags I use:
+- `-name` match by filename (supports wildcards, e.g. `password*`)
+- `/` as the path searches the whole filesystem
+
+## Redirecting errors (2>/dev/null)
+Not a tool, but a shell trick worth remembering. `2>` redirects stderr
+(error output) separately from normal output (stdout). Sending it to
+`/dev/null` throws errors away instead of printing them, which is handy
+with commands like `find /` that generate a lot of "permission denied" noise.
+
+Example:
+`find / -name password* 2>/dev/null`
+
+## ssh
+Secure Shell, used to log into a remote machine over an encrypted connection.
+
+Usage:
+`ssh <user>@<host>`
